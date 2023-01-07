@@ -1,0 +1,28 @@
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-family: Roboto, 'SF Pro Display', sans-serif !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: black !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 3px !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  display: inline-block;
+  cursor: pointer;
+
+  width: 1.1rem;
+  height: 1.3rem;
+  outline: none;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
