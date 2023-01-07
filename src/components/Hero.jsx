@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <motion.section
       id="home"
-      className={`flex md:flex-row flex-col pb-14 `}
+      className={`flex md:flex-row flex-col pb-14 xl:py-20 xl:pb-[8rem] `}
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 2, type: 'tween' }}

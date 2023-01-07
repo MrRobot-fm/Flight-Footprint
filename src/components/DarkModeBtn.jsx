@@ -36,7 +36,7 @@ const DarkModeBtn = ({ toggle }) => {
       <div
         className={
           toggle
-            ? 'fixed sm:top-7 top-10 flex items-center mt-3 md:mt-0 z-[2000] md:mr-0 mr-3'
+            ? 'fixed sm:top-7 top-5 flex items-center mt-3 md:mt-0 z-[2000] md:mr-0 mr-3'
             : 'flex items-center mt-3 md:mt-0 z-[2000] md:mr-0 mr-3'
         }
       >

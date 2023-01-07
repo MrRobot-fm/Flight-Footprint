@@ -3,7 +3,7 @@ import iphone from '../assets/img/Silver.png';
 import screen from '../assets/img/Screen2.png';
 import { ScreenData } from '../components';
 
-const ScreenIpad = ({ active, test }) => {
+const ScreenIpad = ({ active }) => {
   const getOrientation = () => window.screen.orientation.type;
   const [orientation, setOrientation] = useState(getOrientation());
   console.log(orientation);
@@ -29,10 +29,10 @@ const ScreenIpad = ({ active, test }) => {
         src={orientation === 'landscape-primary' ? iphone : screen}
         alt="ipad-screen"
         className={
-          orientation === 'landscape-primary' ? ' sm:w-[17rem]  ' : 'w-[30rem] '
+          orientation === 'landscape-primary' ? ' w-[17rem] ' : 'w-[30rem] '
         }
       ></img>
-      {active ? <ScreenData /> : null}
+      {active ? <ScreenData orientation={orientation} /> : null}
     </div>
   );
 };

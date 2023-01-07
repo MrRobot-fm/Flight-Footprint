@@ -5,7 +5,7 @@ import { Stat } from '../components';
 const Stats = () => {
   return (
     <motion.section
-      className={`${styles.flexCenter} ${styles.paddingX}  sm:flex-row flex-col flex-wrap sm:mb-16 mb-6 text-primary dark:text-greySection`}
+      className={`${styles.flexCenter} ${styles.paddingX}  sm:flex-row flex-col flex-wrap sm:mb-16 mb-6 xl:mb-0 text-primary dark:text-greySection`}
       initial={{ opacity: 0 }}
       whileInView={{
         opacity: 1,

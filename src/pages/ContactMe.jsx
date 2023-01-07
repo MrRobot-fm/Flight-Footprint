@@ -6,7 +6,7 @@ import { ContactForm, SocialList } from '../components';
 const ContactMe = () => {
   return (
     <motion.section
-      className={`flex md:flex-row flex-col-reverse items-center md:items-start sm:py-24 py-8 ${styles.paddingX} text-primary dark:text-greySection `}
+      className={`flex md:flex-row flex-col-reverse items-center md:items-start sm:py-24 py-8 xl:py-52 ${styles.paddingX} text-primary dark:text-greySection `}
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{
         opacity: 1,

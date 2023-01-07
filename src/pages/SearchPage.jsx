@@ -13,7 +13,7 @@ const SearchPage = () => {
   return (
     <motion.section
       id="footprint"
-      className={`${styles.paddingX} ${styles.paddingY} xl:py-28 mb-[2rem] w-full xs:flex md:flex-row flex-col justify-between items-center gap-24  text-primary dark:text-greySection `}
+      className={`${styles.paddingX} ${styles.paddingY} xl:py-24 mb-[2rem] w-full xs:flex md:flex-row flex-col justify-between items-center gap-24  text-primary dark:text-greySection `}
       initial={{ opacity: 0, y: 150 }}
       whileInView={{
         opacity: 1,

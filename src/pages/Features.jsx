@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <motion.section
       id="features"
-      className={`${styles.paddingX} ${styles.paddingY} xl:py-28 w-full flex sm:flex-row flex-col justify-between  text-primary dark:text-greySection `}
+      className={`${styles.paddingX} ${styles.paddingY} xl:py-44 w-full flex sm:flex-row flex-col justify-between  text-primary dark:text-greySection `}
       initial={{ x: 100, opacity: 0 }}
       whileInView={{
         x: 0,
