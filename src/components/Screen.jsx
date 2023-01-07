@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import iphone from '../assets/img/Silver.png';
 import screen from '../assets/img/Screen2.png';
-import { ScreenData } from '../components';
+import { ScreenData } from '.';
 
-const ScreenIpad = ({ active }) => {
+const Screen = ({ active }) => {
   const getOrientation = () => window.screen.orientation.type;
   const [orientation, setOrientation] = useState(getOrientation());
   console.log(orientation);
@@ -37,4 +37,4 @@ const ScreenIpad = ({ active }) => {
   );
 };
 
-export default ScreenIpad;
+export default Screen;

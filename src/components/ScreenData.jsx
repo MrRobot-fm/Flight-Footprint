@@ -24,7 +24,7 @@ const ScreenData = ({ orientation }) => {
                 orientation === 'landscape-primary'
                   ? 'text-[1.8rem] text-secondary'
                   : 'xs:text-[2.8rem] text-[2rem] text-secondary'
-              }  flex items-center w-[50%] justify-center gap-4 `}
+              }  flex items-center w-[65%] justify-center gap-2 `}
             >
               <span>{queryCodeFrom.substr(0, 3)} </span>
               <HiOutlineArrowNarrowRight />

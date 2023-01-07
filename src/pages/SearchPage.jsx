@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import styles from '../styled/style';
 import { motion } from 'framer-motion';
-import { ScreenIpad, SearchForm } from '../components';
+import { Screen, SearchForm } from '../components';
 
 const SearchPage = () => {
   const [active, setActive] = useState(false);
@@ -30,7 +30,7 @@ const SearchPage = () => {
         <SearchForm handleWidth={handleWidth} setActive={setActive} />
       </div>
       <div className="w-full flex-1 landscape:flex-[1.5] ">
-        <ScreenIpad active={active} />
+        <Screen active={active} />
       </div>
     </motion.section>
   );

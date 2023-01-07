@@ -24,14 +24,14 @@ const Footer = () => {
         }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex-[0.3] w-full flex justify-center">
-          <p className="text-center ss:text-[1rem] text-[0.7rem] ">
+        <div className="flex-[0.3] w-full flex justify-center flex-wrap">
+          <p className="text-center ss:text-[1rem] text-[0.9rem] ">
             ©Copyright 2022 by Federico Migliore - All Rights Reserved.
           </p>
         </div>
 
         <div className="flex-[0.3] flex-wrap sm:w-[60%] w-[80%] flex md:flex-row flex-col items-center justify-center gap-[0.8rem] ">
-          <p className="text-center ss:text-[1rem] text-[0.7rem]">
+          <p className="text-center ss:text-[1rem] text-[1rem]">
             Created whit:{' '}
           </p>
           <div className="flex gap-[1.2rem]">

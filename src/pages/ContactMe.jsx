@@ -1,4 +1,3 @@
-import React from 'react';
 import styles, { layout } from '../styled/style';
 import { motion } from 'framer-motion';
 import { ContactForm, SocialList } from '../components';

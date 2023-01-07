@@ -6,7 +6,7 @@ export { default as Hero } from './Hero';
 export { default as Navbar } from './Navbar';
 export { default as NavList } from './NavList';
 export { default as ScreenData } from './ScreenData';
-export { default as ScreenIpad } from './ScreenIpad';
+export { default as Screen } from './Screen';
 export { default as SearchForm } from './SearchForm/SearchForm';
 export { default as SocialList } from './SocialList';
 export { default as Stat } from './Stat';
