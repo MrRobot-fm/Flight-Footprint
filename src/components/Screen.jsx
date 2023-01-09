@@ -1,4 +1,4 @@
-import screen from '../assets/img/Screen2.png';
+import iphone from '../assets/img/Silver.png';
 import { ScreenData } from '.';
 import { useSelector } from 'react-redux';
 
@@ -13,7 +13,7 @@ const Screen = ({ active }) => {
           : 'ss:translate-x-[320px] translate-x-[200px] opacity-[0.5] ease-in-out duration-1000 '
       }  flex justify-center items-center relative md:mt-0 mt-16`}
     >
-      <img src={screen} alt="ipad-screen" className="w-[26rem] "></img>
+      <img src={iphone} alt="ipad-screen" className="w-[18rem] "></img>
       {active ? <ScreenData /> : null}
     </div>
   );

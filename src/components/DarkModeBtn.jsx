@@ -87,8 +87,8 @@ const DarkModeBtn = ({ toggle }) => {
           <Switch.Label
             className={
               darkMode
-                ? 'ml-5 md:text-[1.1rem] text-[1.4rem]  flex hover:text-white/60 ease-in-out duration-300'
-                : 'ml-5 md:text-[1.1rem] text-[1.4rem]  flex hover:text-tertiary ease-in-out duration-300'
+                ? 'ml-5 md:text-[1.2rem] text-[1.4rem]  flex hover:text-white/60 ease-in-out duration-300'
+                : 'ml-5 md:text-[1.2rem] text-[1.4rem]  flex hover:text-tertiary ease-in-out duration-300'
             }
             passive
           >

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const initialState = {
@@ -33,15 +33,19 @@ const airportCodeSlice = createSlice({
     }
   },
   extraReducers: builder => {
-    builder.addCase(getAirportCode.fulfilled, (state, action) => {
-      state.data = action.payload;
-      state.code = action.payload.map(item => {
-        return {
-          label: `${item.code} - ${item.name} ( ${item.country_code} ) `,
-          value: `${item.code} - ${item.name} ( ${item.country_code} ) `
-        };
+    builder
+      .addCase(getAirportCode.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.code = action.payload.map(item => {
+          return {
+            label: `${item.code} - ${item.name} ( ${item.country_code} ) `,
+            value: `${item.code} - ${item.name} ( ${item.country_code} ) `
+          };
+        });
+      })
+      .addCase(getAirportCode.rejected, (state, action) => {
+        toast.error(action.payload);
       });
-    });
   }
 });
 

@@ -47,7 +47,7 @@ const footprintSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getFootprint.fulfilled, (state, action) => {
-        state.isLoading = true;
+        state.isLoading = false;
         state.footprint = action.payload;
       })
       .addCase(getFootprint.rejected, (state, action) => {

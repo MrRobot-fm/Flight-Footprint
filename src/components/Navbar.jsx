@@ -5,17 +5,33 @@ import styles from '../styled/style';
 import menu from '../assets/img/menu.svg';
 import close from '../assets/img/close.svg';
 import Translate from '../services/Translate/Translate';
-
 import { DarkModeBtn, NavList } from '../components';
+import { useEffect } from 'react';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
 
   const handleToggle = () => {
     setToggle(prev => !prev);
   };
+
+  const setWindowDimensions = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', setWindowDimensions);
+
+    if (windowWidth > 1023) {
+      setToggle(false);
+    }
+
+    return () => {
+      window.removeEventListener('resize', setWindowDimensions);
+    };
+  }, [windowWidth]);
 
   return (
     <motion.div
@@ -27,6 +43,11 @@ const Navbar = () => {
     >
       <nav
         className={`${styles.boxWidth} flex sm:py-7 py-5 sm:mb-0 mb-2 justify-between items-center text-secondary dark:text-white relative`}
+        onResize={() => {
+          if (window.innerWidth > '1024px') {
+            setToggle(false);
+          }
+        }}
       >
         <DarkModeBtn toggle={toggle} />
 
@@ -85,6 +106,11 @@ const Navbar = () => {
                 ? 'w-full h-[100vh] fixed top-0 left-0 z-[1500] visible translate-x-0 ease-in-out duration-[0.8s]'
                 : 'w-full h-[100vh] fixed top-0 left-0 invisible translate-x-[100%] '
             }
+            onResize={() => {
+              if (window.innerWidth > 1024) {
+                setToggle(false);
+              }
+            }}
           >
             <NavList toggle={toggle} setToggle={setToggle} />
           </nav>

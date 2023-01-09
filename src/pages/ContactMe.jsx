@@ -6,10 +6,10 @@ const ContactMe = () => {
   return (
     <motion.section
       className={`flex md:flex-row flex-col-reverse items-center md:items-start sm:py-24 py-8 xl:py-52 ${styles.paddingX} text-primary dark:text-greySection `}
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, x: -80 }}
       whileInView={{
         opacity: 1,
-        scale: 1,
+        x: 0,
         transition: { type: 'tween', duration: 1.5 }
       }}
       viewport={{ once: true, amount: 0.3 }}
