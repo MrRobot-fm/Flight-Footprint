@@ -2,10 +2,15 @@ import { useState, useEffect } from 'react';
 import iphone from '../assets/img/Silver.png';
 import screen from '../assets/img/Screen2.png';
 import { ScreenData } from '.';
+import { useSelector } from 'react-redux';
 
 const Screen = ({ active }) => {
-  const getOrientation = () => window.screen.orientation.type;
-  const [orientation, setOrientation] = useState(getOrientation());
+  const { footprint } = useSelector(store => store.footprint);
+  const getOrientation = () =>
+    window.matchMedia('(orientation:landscape)').matches;
+  const [orientation, setOrientation] = useState(
+    getOrientation() ? 'landscape-primary' : 'portrait-primary'
+  );
   console.log(orientation);
   useEffect(() => {
     const updateOrientation = event => {
@@ -20,7 +25,7 @@ const Screen = ({ active }) => {
   return (
     <div
       className={`${
-        active
+        active && footprint
           ? 'translate-x-[0px] opacity-100 ease-in-out duration-[1.5s] '
           : 'ss:translate-x-[320px] translate-x-[200px] opacity-[0.5] ease-in-out duration-1000 '
       }  flex justify-center items-center relative md:mt-0 mt-16`}

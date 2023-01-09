@@ -1,12 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const initialState = {
   queryCodeFrom: '',
   queryCodeTo: '',
   footprint: null,
   passenger: 1,
-  flightClass: 'economy'
+  flightClass: 'economy',
+  isLoading: false
 };
 
 export const getFootprint = createAsyncThunk(
@@ -40,9 +42,18 @@ const footprintSlice = createSlice({
     }
   },
   extraReducers: builder => {
-    builder.addCase(getFootprint.fulfilled, (state, action) => {
-      state.footprint = action.payload;
-    });
+    builder
+      .addCase(getFootprint.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getFootprint.fulfilled, (state, action) => {
+        state.isLoading = true;
+        state.footprint = action.payload;
+      })
+      .addCase(getFootprint.rejected, (state, action) => {
+        state.isLoading = false;
+        toast.error(action.payload);
+      });
   }
 });
 

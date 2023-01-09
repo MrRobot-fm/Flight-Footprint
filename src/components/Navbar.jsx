@@ -30,7 +30,7 @@ const Navbar = () => {
       >
         <DarkModeBtn toggle={toggle} />
 
-        <ul className="list-none md:flex hidden justify-between items-center flex-[0.5]  font-medium">
+        <ul className="list-none md:flex hidden justify-around items-center flex-[0.5]  font-medium">
           <li className="cursor-pointer text-[2rem] md:text-[1.2rem] hover:text-tertiary hover:-translate-y-1 active:translate-y-0  transition ease-in-out duration-500">
             {location.pathname === '/features' ? (
               <Link to="/">Home</Link>

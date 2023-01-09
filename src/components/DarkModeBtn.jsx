@@ -7,19 +7,19 @@ import { Tooltip } from 'antd';
 const DarkModeBtn = ({ toggle }) => {
   const [darkMode, setDarkMode] = useState(false);
 
-  const activateDarkMode = () => {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-    setDarkMode(true);
-
-    return;
-  };
-
-  const deactivateDarkMode = () => {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-    setDarkMode(false);
-    return;
+  const toggleDarkMode = () => {
+    if (darkMode === false) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setDarkMode(true);
+      return;
+    }
+    if (darkMode === true) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setDarkMode(false);
+      return;
+    }
   };
 
   useEffect(() => {
@@ -49,10 +49,10 @@ const DarkModeBtn = ({ toggle }) => {
           <Switch.Label
             className={
               darkMode
-                ? 'text-yellow-500 hover:text-yellow-500/80 ease-in-out duration-300 mr-4 md:text-[1.3rem] text-[1.6rem] cursor-pointer flex'
-                : 'mr-4 md:text-[1.3rem]  text-[1.6rem] cursor-pointer flex hover:text-tertiary ease-in-out duration-300'
+                ? 'text-yellow-500 hover:text-yellow-500/80 ease-in-out duration-300 mr-4 md:text-[1.3rem] text-[1.6rem]  flex'
+                : 'mr-4 md:text-[1.3rem]  text-[1.6rem] flex hover:text-tertiary ease-in-out duration-300'
             }
-            onClick={activateDarkMode}
+            passive
           >
             <FontAwesomeIcon
               icon={faMoon}
@@ -67,10 +67,10 @@ const DarkModeBtn = ({ toggle }) => {
         </Tooltip>
 
         <Switch
-          checked={darkMode}
           className={`${
             !darkMode ? 'bg-gray-300/60' : 'bg-blue-500/90'
           } relative inline-flex md:h-7 md:w-14 h-7 w-14 items-center rounded-full transition-colors focus:outline-none   `}
+          onClick={toggleDarkMode}
         >
           <span
             className={`${
@@ -87,10 +87,10 @@ const DarkModeBtn = ({ toggle }) => {
           <Switch.Label
             className={
               darkMode
-                ? 'ml-5 md:text-[1.1rem] text-[1.4rem] cursor-pointer flex hover:text-white/60 ease-in-out duration-300'
-                : 'ml-5 md:text-[1.1rem] text-[1.4rem] cursor-pointer flex hover:text-tertiary ease-in-out duration-300'
+                ? 'ml-5 md:text-[1.1rem] text-[1.4rem]  flex hover:text-white/60 ease-in-out duration-300'
+                : 'ml-5 md:text-[1.1rem] text-[1.4rem]  flex hover:text-tertiary ease-in-out duration-300'
             }
-            onClick={deactivateDarkMode}
+            passive
           >
             <FontAwesomeIcon
               icon={faSun}
