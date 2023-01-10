@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import './searchForm.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AutoComplete } from 'antd';
@@ -20,9 +20,8 @@ import { apiFootOptions } from '../../utils/apiFootOptions';
 const SearchForm = ({ handleWidth, setActive }) => {
   const { code, query } = useSelector(store => store.airportCode);
 
-  const { queryCodeFrom, queryCodeTo, passenger, flightClass } = useSelector(
-    store => store.footprint
-  );
+  const { queryCodeFrom, queryCodeTo, passenger, flightClass, footprint } =
+    useSelector(store => store.footprint);
 
   const dispatch = useDispatch();
 
@@ -35,22 +34,30 @@ const SearchForm = ({ handleWidth, setActive }) => {
     }
   }, [dispatch, query]);
 
-  const handleFootprint = useCallback(
-    e => {
-      e.preventDefault();
-      if (!queryCodeFrom || !queryCodeTo || !passenger || !flightClass) {
-        return;
-      } else {
-        dispatch(
-          getFootprint(
-            apiFootOptions(queryCodeFrom, queryCodeTo, passenger, flightClass)
-          )
-        );
-        handleWidth();
-      }
-    },
-    [dispatch, flightClass, handleWidth, passenger, queryCodeFrom, queryCodeTo]
-  );
+  useEffect(() => {
+    if (footprint) {
+      dispatch(
+        getFootprint(
+          apiFootOptions(queryCodeFrom, queryCodeTo, passenger, flightClass)
+        )
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, flightClass, passenger, queryCodeFrom, queryCodeTo]);
+
+  const handleFootprint = e => {
+    e.preventDefault();
+    if (!queryCodeFrom || !queryCodeTo || !passenger || !flightClass) {
+      return;
+    } else {
+      dispatch(
+        getFootprint(
+          apiFootOptions(queryCodeFrom, queryCodeTo, passenger, flightClass)
+        )
+      );
+      handleWidth();
+    }
+  };
 
   return (
     <form
@@ -64,7 +71,6 @@ const SearchForm = ({ handleWidth, setActive }) => {
         <AutoComplete
           name="from"
           options={code}
-          // style={{ width: 350 }}
           className="shadow-md  dark:shadow-slate-600"
           onSelect={value => {
             dispatch(handleChangeCodeFrom(value));
@@ -72,9 +78,9 @@ const SearchForm = ({ handleWidth, setActive }) => {
           onSearch={value => {
             dispatch(handleChange(value));
           }}
-          onClear={value => {
+          onClear={() => {
             setActive(false);
-            dispatch(handleChangeCodeFrom(''));
+            dispatch(handleChangeCodeFrom('FCO'));
           }}
           filterOption={false}
           allowClear={true}
@@ -93,9 +99,9 @@ const SearchForm = ({ handleWidth, setActive }) => {
           onSelect={value => {
             dispatch(handleChangeCodeTo(value));
           }}
-          onClear={value => {
+          onClear={() => {
             setActive(false);
-            dispatch(handleChangeCodeTo(''));
+            dispatch(handleChangeCodeTo('FCO'));
           }}
           onSearch={value => {
             dispatch(handleChange(value));
@@ -118,9 +124,10 @@ const SearchForm = ({ handleWidth, setActive }) => {
                 value = [1];
                 return;
               }
+
               dispatch(getNumberOfPassenger(...value));
             }}
-            onClear={value => {
+            onClear={() => {
               setActive(false);
               dispatch(getNumberOfPassenger(0));
             }}

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import styles from '../styled/style';
 import { motion } from 'framer-motion';
 import { Screen, SearchForm } from '../components';
@@ -6,9 +6,9 @@ import { Screen, SearchForm } from '../components';
 const SearchPage = () => {
   const [active, setActive] = useState(false);
 
-  const handleWidth = useCallback(() => {
+  const handleWidth = () => {
     setActive(true);
-  }, []);
+  };
 
   return (
     <motion.section

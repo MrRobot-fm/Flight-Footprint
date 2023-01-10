@@ -17,6 +17,7 @@ export const getFootprint = createAsyncThunk(
   async (options, thunkAPI) => {
     try {
       const response = await axios.request(options);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.msg);

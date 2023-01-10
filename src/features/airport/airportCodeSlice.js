@@ -14,7 +14,7 @@ export const getAirportCode = createAsyncThunk(
     try {
       const resp = await axios.get(
         `https://autocomplete.travelpayouts.com/places2?locale=en&types[]=airport&term=${
-          !query ? '' : query
+          query === ' ' ? 'FCO' : query
         }`
       );
       return resp.data;
