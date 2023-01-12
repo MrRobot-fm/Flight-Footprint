@@ -64,14 +64,14 @@ const SearchForm = ({ handleWidth, setActive }) => {
       onSubmit={handleFootprint}
       className="flex flex-col items-start w-full"
     >
-      <div className="flex flex-col py-1 w-full xs:w-[70%] sm:w-[60%] md:w-[90%] lg:w-[60%] overflow-hidden">
+      <div className="flex flex-col py-1 w-full xs:w-[70%] sm:w-[60%] md:w-[90%] lg:w-[60%] ">
         <label htmlFor="from" className="block text-[1.1rem] font-medium">
           From:
         </label>
         <AutoComplete
           name="from"
           options={code}
-          className="shadow-md  dark:shadow-slate-600"
+          className="shadow-md dark:shadow-slate-600 overflow-hidden"
           onSelect={value => {
             dispatch(handleChangeCodeFrom(value));
           }}
@@ -89,13 +89,13 @@ const SearchForm = ({ handleWidth, setActive }) => {
         />
       </div>
 
-      <div className="flex flex-col py-1 w-full xs:w-[70%] sm:w-[60%] md:w-[90%] lg:w-[60%] overflow-hidden">
+      <div className="flex flex-col py-1 w-full xs:w-[70%] sm:w-[60%] md:w-[90%] lg:w-[60%]">
         <label htmlFor="from" className="block text-[1.1rem] font-medium">
           To:
         </label>
         <AutoComplete
           options={code}
-          className="shadow-md dark:shadow-slate-600"
+          className="shadow-md dark:shadow-slate-600 overflow-hidden"
           onSelect={value => {
             dispatch(handleChangeCodeTo(value));
           }}
