@@ -16,6 +16,7 @@
 .ant-select-selection-search {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   font-size: 0.8rem;
   font-family: 'SF Pro Display', sans-serif;
   color: #4f566b;

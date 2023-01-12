@@ -29,7 +29,7 @@ const SearchPage = () => {
         </h1>
         <SearchForm handleWidth={handleWidth} setActive={setActive} />
       </div>
-      <div className="w-full flex-1 landscape:flex-[1.5]">
+      <div className="flex-1 landscape:flex-[1.5]">
         <Screen active={active} />
       </div>
     </motion.section>
