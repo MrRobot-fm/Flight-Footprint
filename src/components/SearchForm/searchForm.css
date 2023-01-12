@@ -16,13 +16,13 @@
 .ant-select-selection-search {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: 'SF Pro Display', sans-serif;
   color: #4f566b;
 }
 
 .ant-select-selection-item {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: 'SF Pro Display', sans-serif;
   color: #4f566b;
 }
