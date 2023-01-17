@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const initialState = {
   query: 'FCO',
   data: null,
+  isLoading: false,
   code: []
 };
 
@@ -34,6 +35,9 @@ const airportCodeSlice = createSlice({
   },
   extraReducers: builder => {
     builder
+      .addCase(getAirportCode.pending, (state, action) => {
+        state.isLoading = true;
+      })
       .addCase(getAirportCode.fulfilled, (state, action) => {
         state.data = action.payload;
         state.code = action.payload.map(item => {
@@ -42,8 +46,10 @@ const airportCodeSlice = createSlice({
             value: `${item.code} - ${item.name} ( ${item.country_code} ) `
           };
         });
+        state.isLoading = false;
       })
       .addCase(getAirportCode.rejected, (state, action) => {
+        state.isLoading = false;
         toast.error(action.payload);
       });
   }
