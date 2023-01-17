@@ -6,7 +6,7 @@ import { Screen, SearchForm } from '../components';
 const SearchPage = () => {
   const [active, setActive] = useState(false);
 
-  const handleWidth = () => {
+  const activateScreen = () => {
     setActive(true);
   };
 
@@ -27,7 +27,7 @@ const SearchPage = () => {
           Calculate emissions in real-time, <br className="sm:block hidden" />
           get clear insights and make informed sustainability decisions.
         </h1>
-        <SearchForm handleWidth={handleWidth} setActive={setActive} />
+        <SearchForm handleWidth={activateScreen} setActive={setActive} />
       </div>
       <div className="flex-1 landscape:flex-[1.5]">
         <Screen active={active} />

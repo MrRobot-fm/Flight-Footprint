@@ -16,14 +16,11 @@ const ContactForm = () => {
         '31NmIPC3WrRZQ4D4B'
       )
       .then(
-        result => {
-          console.log(result.text);
-          console.log('inviato');
+        () => {
           ToastSuccess('Sended');
         },
         error => {
-          console.log(error.text);
-          ToastError('Error');
+          ToastError(error);
         }
       );
 

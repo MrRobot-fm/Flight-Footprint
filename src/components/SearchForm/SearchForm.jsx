@@ -17,7 +17,7 @@ import {
 import { personData, flightClassData } from '../../data/flightData';
 import { apiFootOptions } from '../../utils/apiFootOptions';
 
-const SearchForm = ({ handleWidth, setActive }) => {
+const SearchForm = ({ activateScreen, setActive }) => {
   const { code, query } = useSelector(store => store.airportCode);
 
   const { queryCodeFrom, queryCodeTo, passenger, flightClass, footprint } =
@@ -55,7 +55,7 @@ const SearchForm = ({ handleWidth, setActive }) => {
           apiFootOptions(queryCodeFrom, queryCodeTo, passenger, flightClass)
         )
       );
-      handleWidth();
+      activateScreen();
     }
   };
 
