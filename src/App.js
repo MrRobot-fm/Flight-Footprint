@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Navbar, Footer } from './components';
-import { Home, Features, SearchPage, ContactMe } from './pages';
+import { Home, Features, SearchPage, ContactMe, NotFound } from './pages';
 import { useEffect } from 'react';
 
 const Root = () => {
@@ -39,6 +39,7 @@ const App = () => {
         <Route path="/features" element={<Features />} />
         <Route path="/search-footprint" element={<SearchPage />} />
         <Route path="/contact-me" element={<ContactMe />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );
