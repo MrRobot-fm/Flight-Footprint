@@ -12,21 +12,27 @@ const SearchForm = ({
   setValue,
   errors
 }) => {
-  const [code, setCode] = useState([]);
-  const [query, setQuery] = useState('');
+  const [flightCodeFrom, setFlightCodeFrom] = useState([]);
+  const [flightCodeTo, setFlightCodeTo] = useState([]);
+  const [queryFrom, setQueryFrom] = useState('');
+  const [queryTo, setQueryTo] = useState('');
 
   useEffect(() => {
     const regExp = /[a-zA-Z]/g;
 
-    if (regExp.test(query)) {
-      apiAirportCode(query, setCode);
+    if (regExp.test(queryFrom)) {
+      apiAirportCode(queryFrom, setFlightCodeFrom);
+    }
+
+    if (regExp.test(queryTo)) {
+      apiAirportCode(queryTo, setFlightCodeTo);
     }
 
     register('codeFrom', { required: true, pattern: /[A-Za-z]/ });
     register('codeTo', { required: true, pattern: /[A-Za-z]/ });
     register('passenger', { required: true });
     register('flightClass', { required: true });
-  }, [query, register]);
+  }, [queryFrom, queryTo, register]);
 
   return (
     <form
@@ -39,10 +45,10 @@ const SearchForm = ({
         </label>
 
         <AutoComplete
-          options={code}
+          options={flightCodeFrom}
           className="shadow-md dark:shadow-slate-600"
           onSearch={value => {
-            setQuery(value);
+            setQueryFrom(value);
             setValue('codeFrom', value);
           }}
           onSelect={value => {
@@ -69,10 +75,10 @@ const SearchForm = ({
           To:
         </label>
         <AutoComplete
-          options={code}
+          options={flightCodeTo}
           className="shadow-md dark:shadow-slate-600"
           onSearch={value => {
-            setQuery(value);
+            setQueryTo(value);
             setValue('codeTo', value);
           }}
           onSelect={value => {
