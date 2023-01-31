@@ -1,9 +1,25 @@
-import { BsInstagram, BsFacebook, BsWhatsapp, BsGithub } from 'react-icons/bs';
+import {
+  BsLinkedin,
+  BsInstagram,
+  BsFacebook,
+  BsWhatsapp,
+  BsGithub
+} from 'react-icons/bs';
 
 const SocialList = () => {
   return (
     <div className="flex flex-row w-full md:justify-start justify-center items-center md:mt-8 mt-14 md:ml-2 md:mb-0 mb-8 ">
-      <ul className="flex flex-row sm:w-[70%] w-[90%]  justify-between items-center">
+      <ul className="flex flex-row sm:w-[80%] w-[90%]  justify-between items-center">
+        <li className="hover:-translate-y-2 active:translate-y-0 ease-in-out duration-700">
+          <a
+            href="https://www.linkedin.com/in/federicomigliore/"
+            target="blank"
+            className="hover:text-blue-400/90 ease-in-out duration-700"
+          >
+            <BsLinkedin size={28} />
+          </a>
+        </li>
+
         <li className="hover:-translate-y-2 active:translate-y-0 ease-in-out duration-700">
           <a
             href="https://www.facebook.com/federico.migliore.11/"

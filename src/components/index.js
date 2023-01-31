@@ -1,5 +1,5 @@
 export { default as ContactForm } from './ContactForm';
-export { default as DarkModeBtn } from './DarkModeBtn';
+export { default as DarkModeBtn } from './DarkMode/DarkModeBtn';
 export { default as Feature } from './Feature';
 export { default as Footer } from './Footer';
 export { default as Hero } from './Hero';

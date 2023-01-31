@@ -4,7 +4,6 @@ import { Tooltip } from 'antd';
 import {
   SiReact,
   SiReactrouter,
-  SiRedux,
   SiTailwindcss,
   SiFramer
 } from 'react-icons/si';
@@ -30,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex-[0.3] flex-wrap sm:w-[60%] w-[80%] flex md:flex-row flex-col items-center justify-center gap-[0.8rem] ">
+        <div className="flex-[0.3] flex-wrap sm:w-[60%] w-[80%] flex md:flex-row flex-col items-center justify-center gap-[1.4rem] ">
           <p className="text-center ss:text-[1rem] text-[1rem]">
             Created whit:{' '}
           </p>
@@ -51,14 +50,7 @@ const Footer = () => {
             >
               <SiReactrouter className="hover:text-red-400 ease-in-out duration-500 text-[1.9rem]" />
             </Tooltip>
-            <Tooltip
-              placement="bottom"
-              title={<span>Redux Toolkit</span>}
-              arrowPointAtCenter={true}
-              mouseEnterDelay={0.4}
-            >
-              <SiRedux className="hover:text-[#764abc] ease-in-out duration-500 text-[1.7rem]" />
-            </Tooltip>
+
             <Tooltip
               placement="bottom"
               title={<span>Tailwind Css</span>}

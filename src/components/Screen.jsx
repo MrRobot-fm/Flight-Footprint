@@ -1,7 +1,7 @@
 import iphone from '../assets/img/Silver.png';
 import { ScreenData } from '.';
 
-const Screen = ({ active }) => {
+const Screen = ({ active, values, footprint, isLoading }) => {
   return (
     <div
       className={`${
@@ -11,7 +11,13 @@ const Screen = ({ active }) => {
       }  flex justify-center items-center relative md:mt-0 mt-16`}
     >
       <img src={iphone} alt="ipad-screen" className="w-[18rem] "></img>
-      {active ? <ScreenData /> : null}
+      {active ? (
+        <ScreenData
+          values={values}
+          footprint={footprint}
+          isLoading={isLoading}
+        />
+      ) : null}
     </div>
   );
 };

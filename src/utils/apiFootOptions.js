@@ -1,9 +1,4 @@
-export const apiFootOptions = (
-  queryCodeFrom,
-  queryCodeTo,
-  passenger,
-  flightClass
-) => {
+export const apiFootOptions = (codeFrom, codeTo, passenger, flightClasses) => {
   const options = {
     method: 'POST',
     url: 'https://beta3.api.climatiq.io/travel/flights',
@@ -14,10 +9,10 @@ export const apiFootOptions = (
     data: {
       legs: [
         {
-          from: `${queryCodeFrom.substr(0, 3)}`,
-          to: `${queryCodeTo.substr(0, 3)}`,
+          from: `${codeFrom}`,
+          to: `${codeTo}`,
           passengers: passenger,
-          class: flightClass
+          class: flightClasses
         }
       ]
     }

@@ -2,12 +2,40 @@ import { useState } from 'react';
 import styles from '../styled/style';
 import { motion } from 'framer-motion';
 import { Screen, SearchForm } from '../components';
+import { apiFootprint } from '../utils/apiFootprint';
+import { apiFootOptions } from '../utils/apiFootOptions';
+import { useForm } from 'react-hook-form';
 
 const SearchPage = () => {
   const [active, setActive] = useState(false);
+  const [values, setValues] = useState(null);
+  const [footprint, setFootprint] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors }
+  } = useForm();
 
   const activateScreen = () => {
     setActive(true);
+  };
+
+  const handleFootprint = formValues => {
+    setValues(formValues);
+    apiFootprint(
+      apiFootOptions(
+        formValues.codeFrom,
+        formValues.codeTo,
+        formValues.passenger,
+        formValues.flightClass
+      ),
+      setFootprint,
+      setIsLoading
+    );
+    activateScreen();
   };
 
   return (
@@ -27,10 +55,21 @@ const SearchPage = () => {
           Calculate emissions in real-time, <br className="sm:block hidden" />
           get clear insights and make informed sustainability decisions.
         </h1>
-        <SearchForm activateScreen={activateScreen} setActive={setActive} />
+        <SearchForm
+          handleFootprint={handleFootprint}
+          register={register}
+          handleSubmit={handleSubmit}
+          setValue={setValue}
+          errors={errors}
+        />
       </div>
       <div className="flex-1 landscape:flex-[1.5]">
-        <Screen active={active} />
+        <Screen
+          active={active}
+          values={values}
+          footprint={footprint}
+          isLoading={isLoading}
+        />
       </div>
     </motion.section>
   );
