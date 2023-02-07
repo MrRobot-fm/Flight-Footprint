@@ -14,7 +14,6 @@
   font-size: 1rem !important;
   display: inline-block;
   cursor: pointer;
-
   width: 1.1rem;
   height: 1.3rem;
   outline: none;
@@ -25,4 +24,8 @@
 }
 body {
   top: 0px !important;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+  display: none;
 }
