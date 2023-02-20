@@ -1,6 +1,6 @@
-import styles from '../styled/style';
+import styles from '../../styled/style';
 import { motion } from 'framer-motion';
-import { Stat } from '../components';
+import Stat from '../../atoms/Stats/Stat';
 
 const Stats = () => {
   return (

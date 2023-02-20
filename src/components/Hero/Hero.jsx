@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from '../styled/style';
-import mac from '../assets/img/Device - Macbook Pro-co2.png';
+import styles from '../../styled/style';
+import mac from '../../assets/img/Device - Macbook Pro-co2.png';
 import { motion } from 'framer-motion';
+import Button from '../../atoms/buttons/Button';
 
 const Hero = () => {
   return (
@@ -28,12 +28,9 @@ const Hero = () => {
             airplane flight and realize how much pollution is produced to meet
             our needs.
           </p>
-          <button
-            type="button"
-            className="py-2 px-4 mt-6 bg-blue-500/90 hover:bg-blue-500 ease-out duration-700 dark:bg-blue-500/90 dark:hover:bg-blue-500/70 hover:-translate-y-1 active:translate-y-0 font-medium text-[17px]  text-white outline-none rounded-[10px] shadow-sm"
-          >
-            <a href="#footprint"> Get your footprint &rarr;</a>
-          </button>
+          <div className="mt-5">
+            <Button text="Get your footprint &rarr;" link="#footprint" />
+          </div>
         </div>
       </div>
       <div className={`flex-1 flex justify-end items-center md:my-0 my-10 `}>

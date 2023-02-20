@@ -1,42 +1,42 @@
-import { useState } from 'react';
 import styles from '../styled/style';
 import { motion } from 'framer-motion';
 import { Screen, SearchForm } from '../components';
-import { apiFootprint } from '../utils/apiFootprint';
-import { apiFootOptions } from '../utils/apiFootOptions';
-import { useForm } from 'react-hook-form';
+import { useHandleSearchForm } from './../hooks/searchForm/useHandleSearchForm';
+import { useFetchFootprint } from './../hooks/footprint/useFetchFootprint';
+import { useHandleAirportCode } from './../hooks/airportCode/useHandleAirportCode';
+import { useHandleFootprint } from './../hooks/footprint/useHandleFootprint';
+import { useFetchAirportCode } from './../hooks/airportCode/useFetchAirportCode';
 
 const SearchPage = () => {
-  const [active, setActive] = useState(false);
-  const [values, setValues] = useState(null);
-  const [footprint, setFootprint] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
   const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors }
-  } = useForm();
-
-  const activateScreen = () => {
-    setActive(true);
-  };
-
-  const handleFootprint = formValues => {
-    setValues(formValues);
-    apiFootprint(
-      apiFootOptions(
-        formValues.codeFrom,
-        formValues.codeTo,
-        formValues.passenger,
-        formValues.flightClass
-      ),
-      setFootprint,
-      setIsLoading
-    );
-    activateScreen();
-  };
+    apiAirportCode: apiAirportCodeFrom,
+    airportData: airportDataFrom,
+    loading: loadingFrom
+  } = useFetchAirportCode();
+  const {
+    apiAirportCode: apiAirportCodeTo,
+    airportData: airportDataTo,
+    loading: loadingTo
+  } = useFetchAirportCode();
+  const {
+    flightCodeFrom,
+    flightCodeTo,
+    setQueryFrom,
+    setQueryTo,
+    queryFrom,
+    queryTo
+  } = useHandleAirportCode(
+    apiAirportCodeFrom,
+    apiAirportCodeTo,
+    airportDataFrom,
+    airportDataTo
+  );
+  const { apiFootprint, footprint, isLoading, isError } = useFetchFootprint();
+  const { handleFootprint, active, values } = useHandleFootprint(apiFootprint);
+  const { handleSubmit, setValue, errors, register } = useHandleSearchForm(
+    queryFrom,
+    queryTo
+  );
 
   return (
     <motion.section
@@ -61,6 +61,12 @@ const SearchPage = () => {
           handleSubmit={handleSubmit}
           setValue={setValue}
           errors={errors}
+          flightCodeFrom={flightCodeFrom}
+          flightCodeTo={flightCodeTo}
+          setQueryFrom={setQueryFrom}
+          setQueryTo={setQueryTo}
+          loadingFrom={loadingFrom}
+          loadingTo={loadingTo}
         />
       </div>
       <div className="flex-1 landscape:flex-[1.5]">
@@ -69,6 +75,7 @@ const SearchPage = () => {
           values={values}
           footprint={footprint}
           isLoading={isLoading}
+          isError={isError}
         />
       </div>
     </motion.section>

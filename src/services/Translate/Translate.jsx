@@ -1,29 +1,11 @@
-import React, { useEffect } from 'react';
 import { TfiWorld } from 'react-icons/tfi';
 import { Tooltip } from 'antd';
 import './translate.css';
+import { useHandleTranslate } from '../../hooks/translate/useHandleTranslate';
 
 const Translate = ({ toggle }) => {
-  const googleTranslateElementInit = () => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: 'en',
-        includedLanguages: 'it,fr,en,nl,pt,es,de,el,zh-CN,ja',
-        layout: window.google.translate.TranslateElement.InlineLayout.BUTTON
-      },
-      'google_translate_element'
-    );
-  };
-
-  useEffect(() => {
-    var addScript = document.createElement('script');
-    addScript.setAttribute(
-      'src',
-      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-    );
-    document.body.appendChild(addScript);
-    window.googleTranslateElementInit = googleTranslateElementInit;
-  }, []);
+  // eslint-disable-next-line no-unused-vars
+  const { googleTranslateElementInit } = useHandleTranslate();
 
   return (
     <div

@@ -1,7 +1,7 @@
-import iphone from '../assets/img/Silver.png';
-import { ScreenData } from '.';
+import iphone from '../../assets/img/Silver.png';
+import { ScreenData } from '..';
 
-const Screen = ({ active, values, footprint, isLoading }) => {
+const Screen = ({ active, values, footprint, isLoading, isError }) => {
   return (
     <div
       className={`${
@@ -16,6 +16,7 @@ const Screen = ({ active, values, footprint, isLoading }) => {
           values={values}
           footprint={footprint}
           isLoading={isLoading}
+          isError={isError}
         />
       ) : null}
     </div>

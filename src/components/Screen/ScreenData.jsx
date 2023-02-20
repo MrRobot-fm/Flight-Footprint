@@ -1,10 +1,11 @@
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import Spinner from '../../atoms/Spinner/Spinner';
 
-const ScreenData = ({ values, footprint, isLoading }) => {
+const ScreenData = ({ values, footprint, isLoading, isError }) => {
   return (
     <div className="w-full h-[75%] flex flex-col absolute xs:top-16 top-12">
-      {footprint && !isLoading ? (
+      {footprint && !isLoading && !isError && (
         <motion.div
           className="h-full flex flex-col justify-evenly items-center"
           initial={{ opacity: 0 }}
@@ -35,9 +36,24 @@ const ScreenData = ({ values, footprint, isLoading }) => {
             </span>
           </div>
         </motion.div>
-      ) : (
-        <div className="h-full flex flex-col items-center justify-center">
-          <h2 className="text-[1.5rem]">Loading...</h2>
+      )}
+      {isLoading && (
+        <div className="h-full flex flex-col items-center justify-center text-black">
+          <h2 className="text-[1.5rem] font-medium mb-2">Loading...</h2>
+          <Spinner
+            borderWidth="8px"
+            borderColor="#f3f3f3"
+            borderTopWidth="8px"
+            borderTopColor="#3498db"
+            width="2.5rem"
+            height="2.5rem"
+          />
+        </div>
+      )}
+      {isError && (
+        <div className="h-full flex flex-col items-center justify-center text-black ">
+          <h2 className="text-[1.5rem] font-medium">Error⛔</h2>
+          <h2 className="text-[1.5rem] font-medium">Failed to get data!!!</h2>
         </div>
       )}
     </div>
