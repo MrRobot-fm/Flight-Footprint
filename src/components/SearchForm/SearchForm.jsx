@@ -25,6 +25,7 @@ const SearchForm = ({
     handleChangePassenger,
     handleChangeClass
   } = useHandleSearchInputs();
+  console.log(loadingFrom);
   return (
     <form
       onSubmit={handleSubmit(handleFootprint)}
@@ -111,14 +112,7 @@ const SearchForm = ({
         <Button text="Get your footprint" type="submit" />
         {(loadingFrom || loadingTo) && (
           <div className="ml-5">
-            <Spinner
-              borderWidth="8px"
-              borderColor="#f3f3f3"
-              borderTopWidth="8px"
-              borderTopColor="#3498db"
-              width="2.5rem"
-              height="2.5rem"
-            />
+            <Spinner />
           </div>
         )}
       </div>

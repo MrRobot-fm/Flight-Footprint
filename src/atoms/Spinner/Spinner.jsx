@@ -1,19 +1,9 @@
 import React from 'react';
 
-const Spinner = ({
-  borderWidth,
-  borderColor,
-  borderTopWidth,
-  borderTopColor,
-  width,
-  height
-}) => {
-  console.log(borderTopColor);
+const Spinner = () => {
   return (
     <>
-      <div
-        className={`border-[${borderWidth}] border-[${borderColor}] border-t-[${borderTopWidth}] border-t-[${borderTopColor}] rounded-[50%] w-[${width}] h-[${height}] animate-spin`}
-      ></div>
+      <div className="border-[8px] border-[#f3f3f3] border-t-[8px] border-t-[#3498db] rounded-[50%] w-[2.5rem] h-[2.5rem] animate-spin"></div>
     </>
   );
 };

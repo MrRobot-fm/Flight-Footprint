@@ -40,14 +40,7 @@ const ScreenData = ({ values, footprint, isLoading, isError }) => {
       {isLoading && (
         <div className="h-full flex flex-col items-center justify-center text-black">
           <h2 className="text-[1.5rem] font-medium mb-2">Loading...</h2>
-          <Spinner
-            borderWidth="8px"
-            borderColor="#f3f3f3"
-            borderTopWidth="8px"
-            borderTopColor="#3498db"
-            width="2.5rem"
-            height="2.5rem"
-          />
+          <Spinner />
         </div>
       )}
       {isError && (
