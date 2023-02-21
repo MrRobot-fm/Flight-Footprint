@@ -19,7 +19,7 @@ const Footer = () => {
       >
         <div className="flex-[0.3] w-full flex justify-center flex-wrap">
           <p className="text-center ss:text-[1rem] text-[0.9rem] ">
-            ©Copyright 2022 by Federico Migliore - All Rights Reserved.
+            ©Copyright 2023 by Federico Migliore - All Rights Reserved.
           </p>
         </div>
 
