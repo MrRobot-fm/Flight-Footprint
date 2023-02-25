@@ -40,11 +40,8 @@ git clone https://github.com/MrRobot-fm/Flight-footprint.git
 ### 2 - Install the dependencies
 npm install
 
-### 3 - Build it!
-npm run build
-
-### 4 - Open in the browser
-Check out for index.html in the /build folder.
+### 3 - Open in the browser
+npm run start
 
 ## 📧 Contact Me
 * Any questions? Send me an e-mail here: federicomiglioredev@gmail.com
