@@ -32,7 +32,6 @@ Flight Footprint is a website where we can find a section where we can calculate
 
 
 ## 💾 Installation
-First of all, you need Node.js installed. If you don't have it, you can download it here: Node.js After the installation, you're ready to go.
 
 ### 1 - Clone the repository
 git clone https://github.com/MrRobot-fm/Flight-footprint.git
