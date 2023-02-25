@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Flight Footprint ✈️
+#### With this project, we can calculate the CO2 footprint of an airplane flight and realize how much pollution is produced to meet our needs.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💥 Try it:  [Flight Footprint](https://flightfootprint.netlify.app/)
 
-## Available Scripts
+### Screenshot
+![Image text](https://user-images.githubusercontent.com/90281132/221364277-597070c6-c98a-439a-a9bf-e01a71f7693f.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## ❓ Why
+This project is the final practice for start2impact Final Front-End course.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 💡 How it works
+Flight Footprint is a website where we can find a section where we can calculate the CO2 emissions produced by a flight by entering data such as: departure airport, destination airport, number of passengers and class of flight.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💻 Languages
+* HTML5
+* CSS3
+* Javascript ES6
+## 📚 Libraries
+* React.js
+* React Router
+* Axios
+* Tailwind CSS
+* React Icons
+* Framer Motion
+* React Hook Form
 
-### `npm test`
+## 🌐 External Services
+* [Climatiq API](https://www.climatiq.io/docs#travel-flights)
+* [Travelpayouts](https://support.travelpayouts.com/hc/en-us/articles/360002322572-Autocomplete-API-for-countries-cities-and-airports-by-Aviasales)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 💾 Installation
+First of all, you need Node.js installed. If you don't have it, you can download it here: Node.js After the installation, you're ready to go.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1 - Clone the repository
+git clone https://github.com/MrRobot-fm/Flight-footprint.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2 - Install the dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3 - Build it!
+npm run build
 
-### `npm run eject`
+### 4 - Open in the browser
+Check out for index.html in the /build folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📧 Contact Me
+* Any questions? Send me an e-mail here: federicomiglioredev@gmail.com
+* You can find my Linkedin profile here: https://www.linkedin.com/in/federicomigliore/
