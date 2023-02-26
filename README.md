@@ -16,8 +16,7 @@ Flight Footprint is a website where we can find a section where we can calculate
 ## 💻 Languages
 * HTML5
 * CSS3
-* Javascript ES6
-* React.js
+* React JS
 ## 📚 Libraries
 * React Router
 * Axios
