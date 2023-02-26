@@ -23,6 +23,7 @@ Flight Footprint is a website where we can find a section where we can calculate
 * Axios
 * Tailwind CSS
 * React Icons
+* Fontawesome
 * Framer Motion
 * React Hook Form
 * Tostify
