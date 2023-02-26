@@ -1,5 +1,5 @@
 # Flight Footprint ✈️
-#### With this project, we can calculate the CO2 footprint of an airplane flight and realize how much pollution is produced to meet our needs.
+#### With flight footprint, we can calculate the CO2 footprint of an airplane flight and realize how much pollution is produced to meet our needs.
 
 ### 💥 Try it:  [Flight Footprint](https://flightfootprint.netlify.app/)
 
