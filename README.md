@@ -17,14 +17,16 @@ Flight Footprint is a website where we can find a section where we can calculate
 * HTML5
 * CSS3
 * Javascript ES6
-## 📚 Libraries
 * React.js
+## 📚 Libraries
 * React Router
 * Axios
 * Tailwind CSS
 * React Icons
 * Framer Motion
 * React Hook Form
+* Tostify
+* dotenv
 
 ## 🌐 External Services
 * [Climatiq API](https://www.climatiq.io/docs#travel-flights)
