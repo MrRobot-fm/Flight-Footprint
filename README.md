@@ -30,7 +30,7 @@ Flight Footprint is a website where we can find a section where we can calculate
 
 ## 🌐 External Services
 * [Climatiq API](https://www.climatiq.io/docs#travel-flights)
-* [Travelpayouts](https://support.travelpayouts.com/hc/en-us/articles/360002322572-Autocomplete-API-for-countries-cities-and-airports-by-Aviasales)
+* [Travelpayouts API](https://support.travelpayouts.com/hc/en-us/articles/360002322572-Autocomplete-API-for-countries-cities-and-airports-by-Aviasales)
 
 
 ## 💾 Installation
