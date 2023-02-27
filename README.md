@@ -25,6 +25,7 @@ Flight Footprint is a website where we can find a section where we can calculate
 * Fontawesome
 * Framer Motion
 * React Hook Form
+* Email JS
 * Tostify
 * dotenv
 
